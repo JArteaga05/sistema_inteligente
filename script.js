@@ -78,6 +78,21 @@ const vehiculos = [
 
 const cards = document.getElementById("vehiculos");
 const registro = document.getElementById("registro");
+const temaBtn = document.getElementById("temaBtn");
+
+function aplicarTema(tema) {
+  const modoOscuro = tema === "oscuro";
+  document.body.dataset.theme = modoOscuro ? "dark" : "light";
+  temaBtn.setAttribute("aria-pressed", String(modoOscuro));
+  temaBtn.textContent = modoOscuro ? "☀️ Modo claro" : "🌙 Modo oscuro";
+}
+
+aplicarTema(localStorage.getItem("tema") === "oscuro" ? "oscuro" : "claro");
+temaBtn.addEventListener("click", () => {
+  const nuevoTema = document.body.dataset.theme === "dark" ? "claro" : "oscuro";
+  aplicarTema(nuevoTema);
+  localStorage.setItem("tema", nuevoTema);
+});
 
 function escribir(mensaje) {
   const p = document.createElement("p");
