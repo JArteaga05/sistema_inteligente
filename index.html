@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Vehículos Inteligentes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="tag">SIMULADOR · POO</div>
+    <h1>🚗 Sistema de Vehículos Inteligentes</h1>
+    <p>Simula la aceleración y el frenado de distintos tipos de vehículos.</p>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Panel de control</h2>
+      <p>Selecciona un vehículo y prueba sus capacidades. Cada clase responde de forma diferente.</p>
+    </section>
+
+    <section id="vehiculos" class="grid"></section>
+
+    <section class="controls">
+      <h2>Prueba de aceleración</h2>
+      <div class="form-grid">
+        <label>Vehículo
+          <select id="vehiculoSelect">
+            <option value="0">Auto eléctrico · Tesla Model 3</option>
+            <option value="1">Moto · Yamaha MT-07</option>
+            <option value="2">Camión · Volvo FH</option>
+          </select>
+        </label>
+        <label>Modo de aceleración
+          <select id="modoSelect">
+            <option value="base">Aceleración normal</option>
+            <option value="turbo">Con turbo</option>
+            <option value="terreno">Turbo en montaña</option>
+          </select>
+        </label>
+      </div>
+      <div class="buttons">
+        <button id="acelerarBtn" class="primary">⚡ Acelerar</button>
+        <button id="detenerBtn" class="secondary">🛑 Detener</button>
+        <button id="pruebaBtn" class="outline">▶ Prueba polimórfica (todos)</button>
+      </div>
+    </section>
+
+    <section class="log-section">
+      <div class="log-heading">
+        <h2>Registro de simulación</h2>
+        <button id="limpiarBtn" class="clear">Limpiar</button>
+      </div>
+      <div id="registro" class="log" aria-live="polite">
+        <p class="muted">La actividad de los vehículos aparecerá aquí.</p>
+      </div>
+    </section>
+
+    <section class="concepts">
+      <h2>Conceptos demostrados</h2>
+      <div class="concept-grid">
+        <article><h3>Herencia</h3><p>AutoElectrico, Moto y Camion heredan de Vehiculo.</p></article>
+        <article><h3>Sobrescritura</h3><p>Cada clase hija redefine acelerar() y detener().</p></article>
+        <article><h3>Polimorfismo</h3><p>Un mismo ciclo llama los mismos métodos y cada objeto responde distinto.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer>Sistema de Vehículos Inteligentes · Proyecto académico</footer>
+  <script src="script.js"></script>
+</body>
+</html>
